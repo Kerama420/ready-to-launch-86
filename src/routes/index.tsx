@@ -33,7 +33,7 @@ function Home() {
             <p className="mt-6 text-lg text-muted-foreground">Sovereign Biosystems EA Limited is a Kenya-based health products and technologies company helping manufacturers, principals, distributors and healthcare partners develop practical pathways for pharmaceuticals, medical products and emerging health technologies.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Btn to="/contact">Partner with us</Btn>
-              <Btn to="/health-products-technologies" variant="outline">Explore our capabilities</Btn>
+              <Btn to="/capabilities" variant="outline">Explore our capabilities</Btn>
             </div>
           </div>
           <img src={hero} alt="Kenyan pharmacist and logistics colleague reviewing medical supplies in a Nairobi warehouse" className="aspect-[4/3] w-full rounded-xl object-cover shadow-xl" width={1536} height={1024} />

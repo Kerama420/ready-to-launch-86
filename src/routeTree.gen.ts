@@ -11,9 +11,11 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as CapabilitiesRouteImport } from './routes/capabilities'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as HealthProductsTechnologiesRouteImport } from './routes/health-products-technologies'
 import { Route as MarketAccessRouteImport } from './routes/market-access'
+import { Route as PartnershipsRouteImport } from './routes/partnerships'
 import { Route as PharmaceuticalsRouteImport } from './routes/pharmaceuticals'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as TermsRouteImport } from './routes/terms'
@@ -26,6 +28,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CapabilitiesRoute = CapabilitiesRouteImport.update({
+  id: '/capabilities',
+  path: '/capabilities',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -42,6 +49,11 @@ const HealthProductsTechnologiesRoute =
 const MarketAccessRoute = MarketAccessRouteImport.update({
   id: '/market-access',
   path: '/market-access',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnershipsRoute = PartnershipsRouteImport.update({
+  id: '/partnerships',
+  path: '/partnerships',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PharmaceuticalsRoute = PharmaceuticalsRouteImport.update({
@@ -63,9 +75,11 @@ const TermsRoute = TermsRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/capabilities': typeof CapabilitiesRoute
   '/contact': typeof ContactRoute
   '/health-products-technologies': typeof HealthProductsTechnologiesRoute
   '/market-access': typeof MarketAccessRoute
+  '/partnerships': typeof PartnershipsRoute
   '/pharmaceuticals': typeof PharmaceuticalsRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
@@ -73,9 +87,11 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/capabilities': typeof CapabilitiesRoute
   '/contact': typeof ContactRoute
   '/health-products-technologies': typeof HealthProductsTechnologiesRoute
   '/market-access': typeof MarketAccessRoute
+  '/partnerships': typeof PartnershipsRoute
   '/pharmaceuticals': typeof PharmaceuticalsRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
@@ -84,9 +100,11 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/capabilities': typeof CapabilitiesRoute
   '/contact': typeof ContactRoute
   '/health-products-technologies': typeof HealthProductsTechnologiesRoute
   '/market-access': typeof MarketAccessRoute
+  '/partnerships': typeof PartnershipsRoute
   '/pharmaceuticals': typeof PharmaceuticalsRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
@@ -96,9 +114,11 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/capabilities'
     | '/contact'
     | '/health-products-technologies'
     | '/market-access'
+    | '/partnerships'
     | '/pharmaceuticals'
     | '/privacy'
     | '/terms'
@@ -106,9 +126,11 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/capabilities'
     | '/contact'
     | '/health-products-technologies'
     | '/market-access'
+    | '/partnerships'
     | '/pharmaceuticals'
     | '/privacy'
     | '/terms'
@@ -116,9 +138,11 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/capabilities'
     | '/contact'
     | '/health-products-technologies'
     | '/market-access'
+    | '/partnerships'
     | '/pharmaceuticals'
     | '/privacy'
     | '/terms'
@@ -127,9 +151,11 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CapabilitiesRoute: typeof CapabilitiesRoute
   ContactRoute: typeof ContactRoute
   HealthProductsTechnologiesRoute: typeof HealthProductsTechnologiesRoute
   MarketAccessRoute: typeof MarketAccessRoute
+  PartnershipsRoute: typeof PartnershipsRoute
   PharmaceuticalsRoute: typeof PharmaceuticalsRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
@@ -151,6 +177,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/capabilities': {
+      id: '/capabilities'
+      path: '/capabilities'
+      fullPath: '/capabilities'
+      preLoaderRoute: typeof CapabilitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -170,6 +203,13 @@ declare module '@tanstack/react-router' {
       path: '/market-access'
       fullPath: '/market-access'
       preLoaderRoute: typeof MarketAccessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partnerships': {
+      id: '/partnerships'
+      path: '/partnerships'
+      fullPath: '/partnerships'
+      preLoaderRoute: typeof PartnershipsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pharmaceuticals': {
@@ -199,9 +239,11 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CapabilitiesRoute: CapabilitiesRoute,
   ContactRoute: ContactRoute,
   HealthProductsTechnologiesRoute: HealthProductsTechnologiesRoute,
   MarketAccessRoute: MarketAccessRoute,
+  PartnershipsRoute: PartnershipsRoute,
   PharmaceuticalsRoute: PharmaceuticalsRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
